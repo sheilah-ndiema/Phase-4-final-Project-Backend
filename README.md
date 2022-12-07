@@ -1,24 +1,32 @@
-# README
+## Book-it App Back-end
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Sheilah Ndiema
 
-Things you may want to cover:
+An application that will enable users to by and/or sell books online.
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+ruby "2.7.4"
 
-* Configuration
+## Installation
 
-* Database creation
+Fork and clone both the front-end and back-end repositories
 
-* Database initialization
+## Backend
 
-* How to run the test suite
+cd into the project directory run 'bundle install' run 'rake db:migrate' run start-server to start the server
+System dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+## Front-end
 
-* Deployment instructions
+cd into the project directory run 'npm install' run 'npm start' and the application will open into browser
 
-* ...
+## MVPS
+
+#### Users are able to register and login
+
+#### Users will be able to view all books
+
+#### Users will be able to search for books by name
+
+#### Users will be able to add books and delete books once they are logged in
