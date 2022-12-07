@@ -4,8 +4,8 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :image
       t.decimal :price
-      t.belongs_to :user, null: false, foreign_key: true
-      t.boolean "is_in_stock", default: true, null: false
+      t.integer :user_id
+      t.boolean :is_in_stock, default: true, null: false
       t.timestamps
     end
   end
