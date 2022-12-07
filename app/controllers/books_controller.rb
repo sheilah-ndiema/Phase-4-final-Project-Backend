@@ -1,51 +1,48 @@
 class BooksController < ApplicationController
-    wrap_parameters format: []
+    wrap_parameters false
     #add
     before_action :authorize
     skip_before_action :authorize, only: [:index, :show]
     
-    def index
-        books=Book.all
-        render json: books
-    end
-
-    def show
-        
-
-        book=Book.find_by(id: params[:id])
-        if book
-            render json: book
-        else 
-            render json: {error:"Book not found"}, status: :not_found
+        def index
+            books=Book.all
+            render json: books
         end
-    end
 
-    def create
-        book=Book.create!(book_params)
-        render json: book, status: :created
-        debugger
-    end
-
-    def destroy
-        book = Book.find_by(id: params[:id])
-        if book
-          book.destroy
-          head :no_content
-        else
-          render json: { error: "Book not found" }, status: :not_found
+        def show
+            book=Book.find_by(id: params[:id])
+            if book
+                render json: book
+            else 
+                render json: {error:"Book not found"}, status: :not_found
+            end
         end
-      end
+
+        def create
+            book=Book.create!(book_params)
+
+            render json: book, status: :created
+    
+        end
+
+        def destroy
+            book = Book.find_by(id: params[:id])
+            if book
+            book.destroy
+            head :no_content
+            else
+            render json: { error: "Book not found" }, status: :not_found
+            end
+        end
 
     private
 
-    def book_params
+        def book_params
+            params.permit(:name, :image, :price, :user_id)
+        end
 
-        params.permit(:name, :image, :price)
-
-    end
-
-    #add
-    def authorize
-        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
-      end
+        #add
+        def authorize
+            return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+        end
 end
