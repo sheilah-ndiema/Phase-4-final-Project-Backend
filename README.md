@@ -10,12 +10,12 @@ ruby "2.7.4"
 
 ## Installation
 
+To open the project locally:
 Fork and clone both the front-end and back-end repositories
 
 ## Backend
 
-cd into the project directory run 'bundle install' run 'rake db:migrate' run start-server to start the server
-System dependencies
+cd into the project directory run 'bundle install' run 'rake db:migrate' run start-server to start the server.
 
 ## Front-end
 
@@ -30,3 +30,17 @@ cd into the project directory run 'npm install' run 'npm start' and the applicat
 #### Users will be able to search for books by name
 
 #### Users will be able to add books and delete books once they are logged in
+
+## Deployed links
+
+Backend
+
+Open [https://bookitapi-production.up.railway.app/books](https://bookitapi-production.up.railway.app/books) to view the backend
+
+Front-end
+
+Open [https://dashing-pastelito-844a04.netlify.app](https://dashing-pastelito-844a04.netlify.app)
+
+## Front end github link
+
+Open [https://github.com/sheilah-ndiema/Phase-4-final-project-front-end](https://github.com/sheilah-ndiema/Phase-4-final-project-front-end)
